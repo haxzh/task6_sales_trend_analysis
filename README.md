@@ -12,15 +12,4 @@ Sample `orders` table with columns:
 
 File: `orders_sample.csv`
 
-## Queries
 
-### 1. Monthly Revenue and Order Volume
-```sql
-SELECT 
-    EXTRACT(YEAR FROM order_date) AS year,
-    EXTRACT(MONTH FROM order_date) AS month,
-    SUM(amount) AS total_revenue,
-    COUNT(DISTINCT order_id) AS order_volume
-FROM orders
-GROUP BY year, month
-ORDER BY year, month;
